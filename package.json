@@ -1,0 +1,36 @@
+{
+  "name": "sua",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "tsc"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "author": "joeflateau",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "csv-parse": "^4.16.0",
+    "date-fns": "^2.23.0",
+    "fs-extra": "^8.1.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.9",
+    "@types/lodash": "^4.14.172",
+    "@types/mocha": "^7.0.1",
+    "@types/node": "^13.7.7",
+    "chai": "^4.2.0",
+    "mocha": "^7.1.0",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3"
+  },
+  "bin": {
+    "sua": "./dist/index.js"
+  }
+}
