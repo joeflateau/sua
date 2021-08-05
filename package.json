@@ -5,7 +5,8 @@
   "main": "./dist/index.js",
   "scripts": {
     "build": "tsc",
-    "prepare": "tsc"
+    "prepare": "tsc",
+    "start": "ts-node ./src/index.ts"
   },
   "files": [
     "dist"
@@ -15,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
+    "console-table-printer": "^2.10.0",
     "csv-parse": "^4.16.0",
     "date-fns": "^2.23.0",
     "fs-extra": "^8.1.0",

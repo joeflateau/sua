@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
 import Axios from "axios";
+import { Table } from "console-table-printer";
 import CsvParser from "csv-parse";
 import { parse as parseDate } from "date-fns";
+import { startCase } from "lodash";
 
 interface Record {
   type: string;
@@ -79,10 +81,19 @@ function parseCsvDate(value: string) {
 }
 
 async function printSuas(match?: (record: Record) => boolean) {
+  const table = new Table();
   for await (const record of createSuaIterable()) {
     if (match == null || match(record)) {
-      console.log(JSON.stringify(record));
+      table.addRow(record);
     }
+  }
+  if (table.table.rows.length === 0) {
+    console.log("no results");
+  } else {
+    table.table.columns.forEach((col) => {
+      col.title = startCase(col.title);
+    });
+    table.printTable();
   }
 }
 
