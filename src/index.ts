@@ -6,7 +6,7 @@ import CsvParser from "csv-parse";
 import { parse as parseDate } from "date-fns";
 import { startCase } from "lodash";
 
-interface Record {
+export interface Record {
   type: string;
   saaNotamId: string;
   startTimeZulu: string | null;
